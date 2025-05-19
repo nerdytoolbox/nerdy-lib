@@ -7,7 +7,8 @@ export default defineConfig({
         lib: {
             entry: 'src/index.js',
             name: 'NerdyLib',
-            fileName: (format) => `nerdy-lib.${format}.js`,
+            fileName: 'index',
+            formats: ['es', 'cjs'],
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
@@ -18,5 +19,7 @@ export default defineConfig({
                 },
             },
         },
+        outDir: 'dist',
+        sourcemap: true
     },
 });
