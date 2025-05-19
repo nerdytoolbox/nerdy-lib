@@ -51,7 +51,7 @@ function le() {
         return e.$$typeof === oe ? null : e.displayName || e.name || null;
       if (typeof e == "string") return e;
       switch (e) {
-        case y:
+        case T:
           return "Fragment";
         case Z:
           return "Profiler";
@@ -109,7 +109,7 @@ function le() {
       }
     }
     function o(e) {
-      if (e === y) return "<>";
+      if (e === T) return "<>";
       if (typeof e == "object" && e !== null && e.$$typeof === Y)
         return "<...>";
       try {
@@ -120,7 +120,7 @@ function le() {
       }
     }
     function c() {
-      var e = P.A;
+      var e = y.A;
       return e === null ? null : e.getOwner();
     }
     function s() {
@@ -236,7 +236,7 @@ React keys must be passed directly to JSX without using spread:
     function A(e) {
       typeof e == "object" && e !== null && e.$$typeof === C && e._store && (e._store.validated = 1);
     }
-    var h = b, C = Symbol.for("react.transitional.element"), H = Symbol.for("react.portal"), y = Symbol.for("react.fragment"), X = Symbol.for("react.strict_mode"), Z = Symbol.for("react.profiler"), Q = Symbol.for("react.consumer"), K = Symbol.for("react.context"), ee = Symbol.for("react.forward_ref"), re = Symbol.for("react.suspense"), te = Symbol.for("react.suspense_list"), ne = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), ae = Symbol.for("react.activity"), oe = Symbol.for("react.client.reference"), P = h.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, I = Object.prototype.hasOwnProperty, ie = Array.isArray, w = console.createTask ? console.createTask : function() {
+    var h = b, C = Symbol.for("react.transitional.element"), H = Symbol.for("react.portal"), T = Symbol.for("react.fragment"), X = Symbol.for("react.strict_mode"), Z = Symbol.for("react.profiler"), Q = Symbol.for("react.consumer"), K = Symbol.for("react.context"), ee = Symbol.for("react.forward_ref"), re = Symbol.for("react.suspense"), te = Symbol.for("react.suspense_list"), ne = Symbol.for("react.memo"), Y = Symbol.for("react.lazy"), ae = Symbol.for("react.activity"), oe = Symbol.for("react.client.reference"), y = h.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, I = Object.prototype.hasOwnProperty, ie = Array.isArray, w = console.createTask ? console.createTask : function() {
       return null;
     };
     h = {
@@ -248,8 +248,8 @@ React keys must be passed directly to JSX without using spread:
       h,
       s
     )(), W = w(o(s)), $ = {};
-    R.Fragment = y, R.jsx = function(e, a, i, l, d) {
-      var f = 1e4 > P.recentlyCreatedOwnerStacks++;
+    R.Fragment = T, R.jsx = function(e, a, i, l, d) {
+      var f = 1e4 > y.recentlyCreatedOwnerStacks++;
       return N(
         e,
         a,
@@ -261,7 +261,7 @@ React keys must be passed directly to JSX without using spread:
         f ? w(o(e)) : W
       );
     }, R.jsxs = function(e, a, i, l, d) {
-      var f = 1e4 > P.recentlyCreatedOwnerStacks++;
+      var f = 1e4 > y.recentlyCreatedOwnerStacks++;
       return N(
         e,
         a,
@@ -328,7 +328,7 @@ function J(r, t) {
   }
   return n;
 }
-function T(r) {
+function P(r) {
   for (var t = 1; t < arguments.length; t++) {
     var n = arguments[t] != null ? arguments[t] : {};
     t % 2 ? J(Object(n), !0).forEach(function(o) {
@@ -357,13 +357,13 @@ function pe(r, t) {
   return (t === "string" ? String : Number)(r);
 }
 function G(r) {
-  return r && r.map((t, n) => /* @__PURE__ */ b.createElement(t.tag, T({
+  return r && r.map((t, n) => /* @__PURE__ */ b.createElement(t.tag, P({
     key: n
   }, t.attr), G(t.child)));
 }
 function Ee(r) {
   return (t) => /* @__PURE__ */ b.createElement(Oe, j({
-    attr: T({}, r.attr)
+    attr: P({}, r.attr)
   }, t), G(r.child));
 }
 function Oe(r) {
@@ -379,7 +379,7 @@ function Oe(r) {
       strokeWidth: "0"
     }, n.attr, o, v, {
       className: p,
-      style: T(T({
+      style: P(P({
         color: r.color || n.color
       }, n.style), r.style),
       height: m,
@@ -392,13 +392,18 @@ function Oe(r) {
 function _e(r) {
   return Ee({ attr: { viewBox: "0 0 1024 1024" }, child: [{ tag: "path", attr: { d: "M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z" }, child: [] }] })(r);
 }
-const ge = ({ title: r, handleClickHome: t, children: n }) => /* @__PURE__ */ O.jsxs("div", { className: "main-container", children: [
-  /* @__PURE__ */ O.jsxs("div", { className: "tool-hub", children: [
-    /* @__PURE__ */ O.jsx(_e, { className: "hub-icon", onClick: t }),
-    /* @__PURE__ */ O.jsx("div", { className: "hub-title", children: r })
-  ] }),
-  /* @__PURE__ */ O.jsx("div", { className: "tool-content", children: n })
-] });
+const ge = ({ title: r, children: t }) => {
+  const n = (o) => {
+    o.stopPropagation(), window.location.href = "/";
+  };
+  return /* @__PURE__ */ O.jsxs("div", { className: "main-container", children: [
+    /* @__PURE__ */ O.jsxs("div", { className: "tool-hub", children: [
+      /* @__PURE__ */ O.jsx(_e, { className: "hub-icon", onClick: n }),
+      /* @__PURE__ */ O.jsx("div", { className: "hub-title", children: r })
+    ] }),
+    /* @__PURE__ */ O.jsx("div", { className: "tool-content", children: t })
+  ] });
+};
 export {
   he as Button,
   ge as Hub
