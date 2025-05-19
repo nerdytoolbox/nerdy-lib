@@ -201,7 +201,7 @@ function le() {
         var E = Object.keys(a).filter(function(ce) {
           return ce !== "key";
         });
-        l = 0 < E.length ? "{key: someKey, " + E.join(": ..., ") + ": ...}" : "{key: someKey}", $[u + l] || (E = 0 < E.length ? "{" + E.join(": ..., ") + ": ...}" : "{}", console.error(
+        l = 0 < E.length ? "{key: someKey, " + E.join(": ..., ") + ": ...}" : "{key: someKey}", W[u + l] || (E = 0 < E.length ? "{" + E.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -212,7 +212,7 @@ React keys must be passed directly to JSX without using spread:
           u,
           E,
           u
-        ), $[u + l] = !0);
+        ), W[u + l] = !0);
       }
       if (u = null, i !== void 0 && (n(i), u = "" + i), v(a) && (n(a.key), u = "" + a.key), "key" in a) {
         i = {};
@@ -244,10 +244,10 @@ React keys must be passed directly to JSX without using spread:
         return e();
       }
     };
-    var D, F = {}, L = h["react-stack-bottom-frame"].bind(
+    var D, F = {}, $ = h["react-stack-bottom-frame"].bind(
       h,
       s
-    )(), W = w(o(s)), $ = {};
+    )(), L = w(o(s)), W = {};
     R.Fragment = T, R.jsx = function(e, a, i, l, d) {
       var f = 1e4 > y.recentlyCreatedOwnerStacks++;
       return N(
@@ -257,8 +257,8 @@ React keys must be passed directly to JSX without using spread:
         !1,
         l,
         d,
-        f ? Error("react-stack-top-frame") : L,
-        f ? w(o(e)) : W
+        f ? Error("react-stack-top-frame") : $,
+        f ? w(o(e)) : L
       );
     }, R.jsxs = function(e, a, i, l, d) {
       var f = 1e4 > y.recentlyCreatedOwnerStacks++;
@@ -269,8 +269,8 @@ React keys must be passed directly to JSX without using spread:
         !0,
         l,
         d,
-        f ? Error("react-stack-top-frame") : L,
-        f ? w(o(e)) : W
+        f ? Error("react-stack-top-frame") : $,
+        f ? w(o(e)) : L
       );
     };
   }()), R;
@@ -392,13 +392,13 @@ function Oe(r) {
 function _e(r) {
   return Ee({ attr: { viewBox: "0 0 1024 1024" }, child: [{ tag: "path", attr: { d: "M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z" }, child: [] }] })(r);
 }
-const ge = ({ title: r, children: t }) => {
-  const n = (o) => {
-    o.stopPropagation(), window.location.href = "/";
+const ge = ({ title: r, children: t, className: n }) => {
+  const o = (c) => {
+    c.stopPropagation(), window.location.href = "/";
   };
-  return /* @__PURE__ */ O.jsxs("div", { className: "main-container", children: [
+  return /* @__PURE__ */ O.jsxs("div", { className: `main-container ${n}`, children: [
     /* @__PURE__ */ O.jsxs("div", { className: "tool-hub", children: [
-      /* @__PURE__ */ O.jsx(_e, { className: "hub-icon", onClick: n }),
+      /* @__PURE__ */ O.jsx(_e, { className: "hub-icon", onClick: o }),
       /* @__PURE__ */ O.jsx("div", { className: "hub-title", children: r })
     ] }),
     /* @__PURE__ */ O.jsx("div", { className: "tool-content", children: t })

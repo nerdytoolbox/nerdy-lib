@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import './Hub.scss'
 
-export const Hub = ({ title, children }) => {
+export const Hub = ({ title, children, className }) => {
 
 	const handleClick = (e) => {
 		e.stopPropagation()
@@ -10,7 +10,7 @@ export const Hub = ({ title, children }) => {
 	}
 
 	return (
-		<div className="main-container">
+		<div className={`main-container ${className}`}>
 			<div className="tool-hub">
 				<AiFillHome className="hub-icon" onClick={handleClick} />
 				<div className="hub-title">{title}</div>
