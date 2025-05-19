@@ -7,7 +7,7 @@ export default defineConfig({
         lib: {
             entry: 'src/index.js',
             name: 'NerdyLib',
-            fileName: 'index',
+            fileName: (format) => format === 'es' ? 'index.js' : 'index.cjs',
             formats: ['es', 'cjs'],
         },
         rollupOptions: {
