@@ -8,7 +8,7 @@ export default defineConfig({
             entry: 'src/index.js',
             name: 'NerdyLib',
             fileName: 'index',
-            formats: ['es'],
+            formats: ['es', 'cjs'],
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
