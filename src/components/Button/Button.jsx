@@ -4,7 +4,7 @@ import './Button.scss'
 export const Button = ({
 	children,
 	onClick,
-	size = 'medium',
+	size = 'default',
 	shape = 'rounded',
 	fill = 'bordered',
 	color = 'gray',

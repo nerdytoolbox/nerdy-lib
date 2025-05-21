@@ -3,42 +3,96 @@
 
 // Size and Shape
 $button-sizes: (
-  small: (
+  default: (
     width: (
-      mobile: 20%,
-      desktop: 3rem
-    ),
-    height: 1rem,
-    font-size: 0.7rem,
-    padding: 0.5rem,
-  ),
-  medium: (
-    width: (
-      mobile: 40%,
-      desktop: 10rem
-    ),
-    height: 1.5rem,
-    font-size: 0.85rem,
-    padding: 0.75rem,
-  ),
-  large: (
-    width: (
-      mobile: 100%,
-      desktop: 20rem
+      mobile: fit-content,
+      desktop: fit-content
     ),
     height: 2rem,
-    font-size: 1rem,
+    font-size: 0.9rem,
     padding: 1rem,
   ),
-  square: (
+  size0: (
     width: (
-      mobile: 4rem,
-      desktop: 4rem,
+      mobile: 10%,
+      desktop: 2rem
     ),
-    height: 4rem,
-    font-size: 0.8rem,
-    padding: 0.5rem,
+    height: 1.6rem,
+    font-size: 0.7rem,
   ),
+  size1: (
+    width: (
+      mobile: 20%,
+      desktop: 4rem
+    ),
+    height: 1.7rem,
+    font-size: 0.74rem,
+),
+  size2: (
+    width: (
+      mobile: 30%,
+      desktop: 6rem
+    ),
+    height: 1.8rem,
+    font-size: 0.78rem,
+  ),
+  size3: (
+    width: (
+      mobile: 40%,
+      desktop: 8rem,
+    ),
+    height: 1.9rem,
+    font-size: 0.82rem,
+  ),
+  size4: (
+    width: (
+      mobile: 50%,
+      desktop: 10rem,
+    ),
+    height: 2rem,
+    font-size: 0.86rem,
+  ),
+  size5: (
+    width: (
+      mobile: 60%,
+      desktop: 12rem,
+    ),
+    height: 2.1rem,
+    font-size: 0.9rem,
+  ),
+  size6: (
+    width: (
+      mobile: 70%,
+      desktop: 14rem,
+    ),
+    height: 2.2rem,
+    font-size: 0.925rem,
+  ),
+  size7: (
+    width: (
+      mobile: 80%,
+      desktop: 16rem,
+    ),
+    height: 2.3rem,
+    font-size: 0.95rem,
+  ),
+  size8: (
+    width: (
+      mobile: 90%,
+      desktop: 18rem,
+    ),
+    height: 2.4rem,
+    font-size: 0.975rem,
+  ),
+  size9: (
+    width: (
+      mobile: 100%,
+      desktop: 20rem,
+    ),
+    height: 2.5rem,
+    font-size: 1rem,
+  ),
+
 );
 
 @mixin button-size-shape($size, $shape) {
@@ -58,15 +112,12 @@ $button-sizes: (
     border-radius: 0;
   } @else if $shape == square {
     border-radius: 0;
-    height: map.get(map.get($size-map, width), mobile) !important;
+    height: auto;
+    aspect-ratio: 1/1;
   }
 
   @include mixins.respond-to(desktop) {
     width: map.get(map.get($size-map, width), desktop);
-
-    @if $shape == square {
-      height: map.get(map.get($size-map, width), desktop);
-    }
   }
 }
 
@@ -168,7 +219,7 @@ $colors: (
       @include button-size-shape($size, squared);
     }
     &.#{$size}-square {
-      @include button-size-shape(square, square);
+      @include button-size-shape($size, square);
     }
   }
 
