@@ -9,9 +9,10 @@ export const Button = ({
 	fill = 'bordered',
 	color = 'gray',
 	disabled,
+	selected
 }) => {
 	return (
-		<button className={`btn align-center ${size}-${shape} ${fill}-${color}`} disabled={disabled} onClick={onClick}>
+		<button className={`btn align-center ${size}-${shape} ${fill}-${color}${selected ? "-selected" : ""}`} disabled={disabled} onClick={onClick}>
 			{children}
 		</button>
 	);

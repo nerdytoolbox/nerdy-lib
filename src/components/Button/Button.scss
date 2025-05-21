@@ -228,25 +228,45 @@ $colors: (
     &.filled-#{$color} {
       @include button-variant(filled, $color);
     }
+    &.filled-#{$color}-selected:hover {
+      @include button-variant(filled, $color);
+    }
     &.filled-#{$color}:hover {
+      @include button-variant(filled, $color, true, false);
+    }
+    &.filled-#{$color}-selected {
       @include button-variant(filled, $color, true, false);
     }
     &.filled-#{$color}:disabled {
       @include button-variant(filled, $color, false, true);
     }
+
     &.bordered-#{$color} {
+      @include button-variant(bordered, $color);
+    }
+    &.bordered-#{$color}-selected:hover {
       @include button-variant(bordered, $color);
     }
     &.bordered-#{$color}:hover {
       @include button-variant(bordered, $color, true, false);
     }
+    &.bordered-#{$color}-selected {
+      @include button-variant(bordered, $color, true, false);
+    }
     &.bordered-#{$color}:disabled {
       @include button-variant(bordered, $color, false, true);
     }
+
     &.ghost-#{$color} {
       @include button-variant(ghost, $color);
     }
+    &.ghost-#{$color}-selected:hover {
+      @include button-variant(ghost, $color);
+    }
     &.ghost-#{$color}:hover {
+      @include button-variant(ghost, $color, true, false);
+    }
+    &.ghost-#{$color}-selected {
       @include button-variant(ghost, $color, true, false);
     }
     &.ghost-#{$color}:disabled {
