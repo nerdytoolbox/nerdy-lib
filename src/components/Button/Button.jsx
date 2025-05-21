@@ -1,8 +1,17 @@
 import React from "react";
+import './Button.scss'
 
-export const Button = ({ children, onClick }) => {
+export const Button = ({
+	children,
+	onClick,
+	size = 'medium',
+	shape = 'rounded',
+	fill = 'bordered',
+	color = 'gray',
+	disabled,
+}) => {
 	return (
-		<button className="nerdy-button" onClick={onClick}>
+		<button className={`btn align-center ${size}-${shape} ${fill}-${color}`} disabled={disabled} onClick={onClick}>
 			{children}
 		</button>
 	);

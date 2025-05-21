@@ -1,3 +1,5 @@
+@use "../../mixins";
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -30,6 +32,14 @@
     font-size: 1rem;
     font-weight: bold;
     padding-left: 1rem;
+
+    @include mixins.respond-to(desktop) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include mixins.respond-to(desktop) {
+    height: 5rem;
   }
 }
 
@@ -38,18 +48,8 @@
   margin: 0;
   padding: 1rem;
   overflow: scroll;
-}
 
-@media (min-width: 1024px) {
-  .tool-hub {
-    height: 5rem;
-
-    .hub-title {
-      font-size: 1.5rem;
-    }
-  }
-
-  .tool-content {
+  @include mixins.respond-to(desktop) {
     padding: 2rem;
   }
 }
