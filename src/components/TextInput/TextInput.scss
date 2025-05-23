@@ -1,4 +1,18 @@
-.input {
-  height: 1.5rem;
+@use "sass:map";
+@use "../../colors" as *;
+
+.text-input {
+  height: 2rem;
   font-size: 1rem;
+  border-radius: 0.2rem;
+  border: none;
+
+  @each $color, $props in $colors {
+    &.color-#{$color} {
+      outline: 2px solid map.get(map.get($colors, 'gray'), shade-3);
+    }
+    &.color-#{$color}:hover, &.color-#{$color}:focus {
+      outline: 2px solid map.get(map.get($colors, $color), shade-4);
+    }
+  }
 }
