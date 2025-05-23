@@ -6,7 +6,7 @@ export const Button = ({
 	onClick,
 	size = 'default',
 	shape = 'rounded',
-	fill = 'bordered',
+	fill = 'filled',
 	color = 'gray',
 	disabled,
 	selected

@@ -285,7 +285,7 @@ const Re = ({
   onClick: t,
   size: n = "default",
   shape: a = "rounded",
-  fill: i = "bordered",
+  fill: i = "filled",
   color: l = "gray",
   disabled: d,
   selected: f
