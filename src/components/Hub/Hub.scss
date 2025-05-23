@@ -47,9 +47,16 @@
   flex: 1 1 auto;
   margin: 0;
   padding: 1rem;
-  overflow: scroll;
+  overflow-y: scroll;
 
   @include mixins.respond-to(desktop) {
     padding: 2rem;
   }
+}
+
+.tool-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
 }
