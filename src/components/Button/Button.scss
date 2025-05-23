@@ -191,9 +191,6 @@ $colors: (
     &.filled-#{$color} {
       @include button-variant(filled, $color);
     }
-    &.filled-#{$color}-selected:hover {
-      @include button-variant(filled, $color);
-    }
     &.filled-#{$color}:hover {
       @include button-variant(filled, $color, true, false);
     }
@@ -207,9 +204,6 @@ $colors: (
     &.bordered-#{$color} {
       @include button-variant(bordered, $color);
     }
-    &.bordered-#{$color}-selected:hover {
-      @include button-variant(bordered, $color);
-    }
     &.bordered-#{$color}:hover {
       @include button-variant(bordered, $color, true, false);
     }
@@ -221,9 +215,6 @@ $colors: (
     }
 
     &.ghost-#{$color} {
-      @include button-variant(ghost, $color);
-    }
-    &.ghost-#{$color}-selected:hover {
       @include button-variant(ghost, $color);
     }
     &.ghost-#{$color}:hover {
