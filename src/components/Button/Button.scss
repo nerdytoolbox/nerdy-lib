@@ -1,94 +1,60 @@
 @use "sass:map";
-@use "../../mixins";
 
 // Size and Shape
 $button-sizes: (
   default: (
-    width: (
-      mobile: fit-content,
-      desktop: fit-content
-    ),
+    width: fit-content,
     height: 2rem,
     font-size: 0.9rem,
     padding: 1rem,
   ),
   size0: (
-    width: (
-      mobile: 10%,
-      desktop: 2rem
-    ),
+    width: 2rem,
     height: 1.6rem,
     font-size: 0.7rem,
   ),
   size1: (
-    width: (
-      mobile: 20%,
-      desktop: 4rem
-    ),
+    width: 4rem,
     height: 1.7rem,
     font-size: 0.74rem,
 ),
   size2: (
-    width: (
-      mobile: 30%,
-      desktop: 6rem
-    ),
+    width: 6rem,
     height: 1.8rem,
     font-size: 0.78rem,
   ),
   size3: (
-    width: (
-      mobile: 40%,
-      desktop: 8rem,
-    ),
+    width: 8rem,
     height: 1.9rem,
     font-size: 0.82rem,
   ),
   size4: (
-    width: (
-      mobile: 50%,
-      desktop: 10rem,
-    ),
+    width: 10rem,
     height: 2rem,
     font-size: 0.86rem,
   ),
   size5: (
-    width: (
-      mobile: 60%,
-      desktop: 12rem,
-    ),
+    width: 12rem,
     height: 2.1rem,
     font-size: 0.9rem,
   ),
   size6: (
-    width: (
-      mobile: 70%,
-      desktop: 14rem,
-    ),
+    width: 14rem,
     height: 2.2rem,
     font-size: 0.925rem,
   ),
   size7: (
-    width: (
-      mobile: 80%,
-      desktop: 16rem,
-    ),
+    width: 16rem,
     height: 2.3rem,
     font-size: 0.95rem,
   ),
   size8: (
-    width: (
-      mobile: 90%,
-      desktop: 18rem,
-    ),
+    width: 18rem,
     height: 2.4rem,
     font-size: 0.975rem,
   ),
   size9: (
-    width: (
-      mobile: 100%,
-      desktop: 20rem,
-    ),
+    width: 20rem,
     height: 2.5rem,
     font-size: 1rem,
   ),
@@ -99,7 +65,8 @@ $button-sizes: (
   $size-map: map.get($button-sizes, $size);
   $height: map.get($size-map, height);
 
-  width: map.get(map.get($size-map, width), mobile);
+  width: map.get($size-map, width);
+  max-width: 100%;
   height: $height;
   font-size: map.get($size-map, font-size);
   padding: map.get($size-map, padding);
@@ -114,10 +81,6 @@ $button-sizes: (
     border-radius: 0;
     height: auto;
     aspect-ratio: 1/1;
-  }
-
-  @include mixins.respond-to(desktop) {
-    width: map.get(map.get($size-map, width), desktop);
   }
 }
 
