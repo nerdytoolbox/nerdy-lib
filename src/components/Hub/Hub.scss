@@ -6,6 +6,13 @@
   height: 100dvh;
   width: 100dvw;
   overflow: hidden;
+  background-color: white;
+  color: black;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--eerie-black1);
+    color: white;
+  }
 }
 
 .tool-hub {
@@ -15,7 +22,8 @@
   height: 4rem;
   width: 100%;
   padding-left: 1rem;
-  background-color: var(--light-night);
+  background-color: var(--eerie-black2);
+  box-shadow: 0 0 4rem black;
 
   .hub-icon {
     font-size: 2rem;
@@ -47,7 +55,7 @@
   flex: 1 1 auto;
   margin: 0;
   padding: 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @include mixins.respond-to(desktop) {
     padding: 2rem;
