@@ -107,6 +107,11 @@ $button-sizes: (
 	  color: map.get(map.get($colors, $color), shade-9);
 	} @else {
 	  background-color: transparent;
+	  color: black;
+
+	  @media (prefers-color-scheme: dark) {
+		color: white;
+	  }
 	}
   }
 }
