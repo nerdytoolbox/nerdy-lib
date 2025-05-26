@@ -7,9 +7,9 @@ export const Button = ({
 	size = 'default',
 	shape = 'rounded',
 	fill = 'filled',
-	color = 'white',
-	shade1 = "shade1",
-	shade2 = "shade9",
+	color = 'gray',
+	shade1 = "shade2",
+	shade2 = "shade12",
 	disabled,
 	selected
 }) => {

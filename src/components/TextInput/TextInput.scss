@@ -6,13 +6,40 @@
   font-size: 1rem;
   border-radius: 0.2rem;
   border: none;
+  color: black;
 
-  @each $color, $props in $colors {
-    &.color-#{$color} {
-      outline: 2px solid map.get(map.get($colors, 'gray'), shade-3);
-    }
-    &.color-#{$color}:hover, &.color-#{$color}:focus {
-      outline: 2px solid map.get(map.get($colors, $color), shade-4);
-    }
+  outline: 1px solid map.get(map.get($colors, 'gray'), shade5);
+  background-color: map.get(map.get($colors, 'gray'), shade0);
+}
+
+.text-input:hover {
+  outline: 2px solid map.get(map.get($colors, 'gray'), shade9);
+  background-color: map.get(map.get($colors, 'gray'), shade0);
+}
+
+.text-input:focus {
+  outline: 1px solid map.get(map.get($colors, 'gray'), shade9);
+  background-color: map.get(map.get($colors, 'gray'), shade0);
+}
+
+.text-input::placeholder {
+  color: map.get(map.get($colors, 'gray'), shade9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-input {
+    outline: none;
+    background-color: map.get(map.get($colors, 'gray'), shade2);
+  }
+  .text-input:hover {
+    outline: none;
+    background-color: map.get(map.get($colors, 'gray'), shade6);
+  }
+  .text-input:focus {
+    outline: none;
+    background-color: map.get(map.get($colors, 'gray'), shade2);
+  }
+  .text-input::placeholder {
+    color: map.get(map.get($colors, 'gray'), shade10);
   }
 }

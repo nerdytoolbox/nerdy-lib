@@ -50,7 +50,7 @@ $button-sizes: (
 
 	@if $disabled {
 	  background-color: map.get(map.get($colors, $color), shade0);
-	  color: map.get(map.get($colors, $color), shade1);
+	  color: map.get(map.get($colors, $color), shade3);
 	} @else if $hover or $selected {
 	  background-color: map.get(map.get($colors, $color), $shade2);
 	  color: map.get(map.get($colors, $color), $shade1);
@@ -61,10 +61,10 @@ $button-sizes: (
   } @else if $style == bordered {
 	@if $disabled {
 	  background-color: white;
-	  color: map.get(map.get($colors, $color), shade1);
-	  -webkit-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), shade1);
-	  -moz-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), shade1);
-	  box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), shade1);
+	  color: map.get(map.get($colors, $color), shade3);
+	  -webkit-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), shade3);
+	  -moz-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), shade3);
+	  box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), shade3);
 	} @else if $hover or $selected {
 	  background-color: map.get(map.get($colors, $color), $shade1);
 	  color: map.get(map.get($colors, $color), $shade2);
@@ -73,18 +73,18 @@ $button-sizes: (
 	  box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade2);
 	} @else {
 	  background-color: white;
-	  color: map.get(map.get($colors, $color), $shade1);
-	  -webkit-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade2);
-	  -moz-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade2);
-	  box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade1);
+	  color: map.get(map.get($colors, $color), $shade2);
+	  -webkit-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade1);
+	  -moz-box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade1);
+	  box-shadow: inset 0 0 0.4rem map.get(map.get($colors, $color), $shade2);
 	}
   } @else if $style == ghost {
 	@if $disabled {
 	  background-color: transparent;
-	  color: map.get(map.get($colors, $color), shade0);
+	  color: map.get(map.get($colors, $color), shade2);
 
 	  @media (prefers-color-scheme: dark) {
-		color: var(--light-night);
+		color: map.get(map.get($colors, 'gray'), shade12);
 	  }
 	} @else if $hover or $selected {
 	  background-color: map.get(map.get($colors, $color), $shade1);
