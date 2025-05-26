@@ -6,13 +6,6 @@
   height: 100dvh;
   width: 100dvw;
   overflow: hidden;
-  background-color: white;
-  color: black;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--eerie-black1);
-    color: white;
-  }
 }
 
 .tool-hub {

@@ -2,23 +2,22 @@
 
 :root {
     --white: #FFFFFF;
-    --baby-powder: #FBFEF9;
-
+    --gray: #777777;
     --light-night: #222222;
-    --night: #0A0A0A;
-    --raisin-black: #1F2433;
-    --rich-black: #0A0F1E;
-    --black: #000000;
     --eerie-black2: #202020;
     --eerie-black1: #191919;
+    --black: #000000;
 
-    --gray: #777777;
     --paynes-gray: #56667A;
+    --raisin-black: #1F2433;
+    --night: #0A0A0A;
+    --rich-black: #0A0F1E;
 
     --space-cadet: #1B264F;
     --azure: #4C7FE6;
     --vista-blue: #80A4ED;
 
+    --baby-powder: #FBFEF9;
     --sandy-brown: #FFA552;
 
     --raspberry-rose: #B8336A;
@@ -29,7 +28,6 @@
 
     --hookers-green: #397367;
     --midnight-green: #004346;
-
 }
 
 body {
@@ -39,6 +37,14 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    background-color: white;
+    color: black;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--eerie-black1);
+        color: white;
+    }
 }
 
 .align-vertical {
