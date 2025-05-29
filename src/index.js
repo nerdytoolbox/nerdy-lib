@@ -3,9 +3,10 @@ import './_mixins.scss'
 import './_colors.scss'
 
 import arcsThumbnail from './assets/arcsThumbnail.png'
+import witchOfFernIslandThumbnail from './assets/witchOfFernIslandThumbnail.png'
 
 export { Button } from './components/Button/Button'
 export { TextInput } from './components/TextInput/TextInput'
 export { Hub } from './components/Hub/Hub'
 
-export { arcsThumbnail };
+export { arcsThumbnail, witchOfFernIslandThumbnail };
