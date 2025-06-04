@@ -21,11 +21,16 @@
   .hub-icon {
     font-size: 2rem;
     color: var(--gray);
+    cursor: pointer;
   }
 
   .hub-icon:hover {
-    cursor: pointer;
     color: var(--baby-powder);
+  }
+
+  .custom-icon {
+    height: 3rem;
+    cursor: pointer;
   }
 
   .hub-title {

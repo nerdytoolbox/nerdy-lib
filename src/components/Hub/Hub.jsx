@@ -2,8 +2,13 @@ import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import './Hub.scss'
 
-export const Hub = ({ title, children, footer, className }) => {
-
+export const Hub = ({
+  title,
+	icon,
+  children,
+  footer,
+  className
+}) => {
 	const handleClick = (e) => {
 		e.stopPropagation()
 		window.location.href = "/"
@@ -12,7 +17,8 @@ export const Hub = ({ title, children, footer, className }) => {
 	return (
 		<div className={`main-container ${className}`}>
 			<div className="tool-hub">
-				<AiFillHome className="hub-icon" onClick={handleClick} />
+				{icon && <img src={icon} alt="Home icon" className="custom-icon" onClick={handleClick} />}
+				{!icon && <AiFillHome className="hub-icon" onClick={handleClick} />}
 				<div className="hub-title">{title}</div>
 			</div>
 			<div className="tool-content">
