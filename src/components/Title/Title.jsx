@@ -1,7 +1,7 @@
 import React from "react"
 import './Title.scss'
 
-const Title = ({ icon, text }) => {
+export const Title = ({ icon, text }) => {
 	return (
 		<div className="title">
 			<img src={icon} alt={text} className="title-icon" />
@@ -9,5 +9,3 @@ const Title = ({ icon, text }) => {
 		</div>
 	)
 }
-
-export default Title
