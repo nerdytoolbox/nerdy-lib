@@ -18,30 +18,32 @@
   background-color: var(--eerie-black2);
   box-shadow: 0 0 4rem black;
 
-  .hub-icon {
-    font-size: 2rem;
-    color: var(--gray);
-    cursor: pointer;
-  }
-
-  .hub-icon:hover {
-    color: var(--baby-powder);
-  }
-
-  .custom-icon {
-    height: 3rem;
-    cursor: pointer;
-  }
-
   .hub-title {
-    color: var(--baby-powder);
-    font-size: 1rem;
-    font-weight: bold;
-    padding-left: 1rem;
+    display: flex;
+    align-items: center;
 
-    @include mixins.respond-to(desktop) {
-      font-size: 1.5rem;
+    .title-icon {
+      height: 3rem;
+      cursor: pointer;
     }
+
+    .title-text {
+      color: var(--baby-powder);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      padding-left: 1rem;
+      cursor: pointer;
+
+      @include mixins.respond-to(desktop) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .hub-title:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
   }
 
   @include mixins.respond-to(desktop) {

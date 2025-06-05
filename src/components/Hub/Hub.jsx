@@ -1,13 +1,10 @@
 import React from "react";
-import { AiFillHome } from "react-icons/ai";
+import logo from './NerdyToolboxThumbnail.png'
 import './Hub.scss'
 
 export const Hub = ({
-  title,
-	icon,
   children,
   footer,
-  className
 }) => {
 	const handleClick = (e) => {
 		e.stopPropagation()
@@ -15,11 +12,12 @@ export const Hub = ({
 	}
 
 	return (
-		<div className={`main-container ${className}`}>
+		<div className="main-container">
 			<div className="tool-hub">
-				{icon && <img src={icon} alt="Home icon" className="custom-icon" onClick={handleClick} />}
-				{!icon && <AiFillHome className="hub-icon" onClick={handleClick} />}
-				<div className="hub-title">{title}</div>
+				<div className="hub-title">
+					<img src={logo} alt="Logo" className="title-icon" onClick={handleClick} />
+					<div className="title-text" onClick={handleClick}>NERDY TOOLBOX</div>
+				</div>
 			</div>
 			<div className="tool-content">
 				{children}
