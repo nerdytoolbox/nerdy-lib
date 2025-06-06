@@ -34,7 +34,7 @@
       padding-left: 0.8rem;
       cursor: pointer;
 
-      @include mixins.respond-to(desktop) {
+      @include mixins.desktop {
         font-size: 1.2rem;
         padding-left: 1rem;
       }
@@ -47,7 +47,7 @@
     text-underline-offset: 6px;
   }
 
-  @include mixins.respond-to(desktop) {
+  @include mixins.desktop {
     height: 5rem;
   }
 }
@@ -58,7 +58,7 @@
   padding: 1rem;
   overflow-y: auto;
 
-  @include mixins.respond-to(desktop) {
+  @include mixins.desktop {
     padding: 2rem;
   }
 }
@@ -68,4 +68,13 @@
   justify-content: center;
   align-items: center;
   margin: 0.5rem 0;
+
+  font-size: 0.6rem;
+  color: var(--gray);
+  text-align: center;
+
+  a, a:hover, a:active {
+    color: var(--gray);
+    text-decoration: none;
+  }
 }
