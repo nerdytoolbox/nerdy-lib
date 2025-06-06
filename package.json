@@ -7,7 +7,9 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./src/mixins": "./src/_mixins.scss",
+    "./src/colors": "./src/_colors.scss"
   },
   "peerDependencies": {
     "react": "^19.1.0",
