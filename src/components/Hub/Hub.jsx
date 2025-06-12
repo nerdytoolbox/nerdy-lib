@@ -1,5 +1,5 @@
 import React from "react";
-import logo from './NerdyToolboxThumbnail.png'
+import logo from '../../assets/NerdyToolboxThumbnail.png'
 import './Hub.scss'
 
 export const Hub = ({

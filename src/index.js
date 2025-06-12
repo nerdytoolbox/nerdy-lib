@@ -1,7 +1,9 @@
-import './index.scss'
-import './_mixins.scss'
-import './_colors.scss'
+// Include stylesheets
+import './stylesheets/index.scss'
+import './stylesheets/_mixins.scss'
+import './stylesheets/_colors.scss'
 
+// Export components
 export { Button } from './components/Button/Button'
 export { TextInput } from './components/TextInput/TextInput'
 export { Hub } from './components/Hub/Hub'
