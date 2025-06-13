@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { migrateData } from "./migrations";
 import { validateMigrations } from "./validateMigrations";
+import { copyNestedObject, updateNestedValue } from "./nestedObjects";
 
 export const useStorage = (localStorageKey, defaultData = {}, version, migrations) => {
 	const [data, setData] = useState(null);
@@ -29,5 +30,15 @@ export const useStorage = (localStorageKey, defaultData = {}, version, migration
 		localStorage.setItem(localStorageKey, JSON.stringify(data));
 	}, [localStorageKey, data]);
 
-	return { data };
+	/*
+	* Function to update a specific path in the data object
+	*
+	* path: string - The path to the property to update, e.g., 'user.name'
+	* value: any - The new value to set at the specified path
+	*/
+	const update = (path, value) => {
+		setData(updateNestedValue(copyNestedObject(data), path, value));
+	}
+
+	return { data, update };
 }
