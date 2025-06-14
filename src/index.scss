@@ -1,0 +1,70 @@
+:root {
+    --white: #FFFFFF;
+    --gray: #777777;
+    --light-night: #222222;
+    --eerie-black2: #202020;
+    --eerie-black1: #191919;
+    --black: #000000;
+
+    --paynes-gray: #56667A;
+    --raisin-black: #1F2433;
+    --night: #0A0A0A;
+    --rich-black: #0A0F1E;
+
+    --space-cadet: #1B264F;
+    --azure: #4C7FE6;
+    --vista-blue: #80A4ED;
+
+    --baby-powder: #FBFEF9;
+    --sandy-brown: #FFA552;
+
+    --raspberry-rose: #B8336A;
+    --penn-red: #92140C;
+    --engineering-orange: #BF0603;
+
+    --english-violet: #5D3A66;
+    --plum: #835190;
+
+    --hookers-green: #397367;
+    --midnight-green: #004346;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: white;
+    color: black;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--eerie-black1);
+        color: white;
+    }
+}
+
+// Align and space between classes
+.align-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.align-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.block {
+    margin-bottom: 2rem;
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,5 +1,4 @@
 import { getNestedValue, removeNestedValue, setNestedValue } from "./nestedObjects";
-import { validations } from "./validations";
 
 export const MigrationType = {
 	// Basic actions that can be performed on the storage

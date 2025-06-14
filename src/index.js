@@ -1,7 +1,7 @@
 // Include stylesheets
-import './stylesheets/index.scss'
-import './stylesheets/_mixins.scss'
-import './stylesheets/_colors.scss'
+import './index.scss'
+import './_mixins.scss'
+import './_colors.scss'
 
 // Export components
 export { Button } from './components/Button/Button'
