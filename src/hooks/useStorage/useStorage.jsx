@@ -9,7 +9,7 @@ export const useStorage = (localStorageKey, defaultData = {}, migrations) => {
 	// Load initial data
 	useEffect(() => {
 		validateMigrations(migrations)
-		const version = migrations.length > 0 ? migrations[migrations.length - 1].toVersion : 1;
+		const version = migrations?.length > 0 ? migrations[migrations.length - 1].toVersion : 1;
 
 		const fetchData = async () => {
 			const loadData = JSON.parse(localStorage.getItem(localStorageKey) || JSON.stringify(defaultData));
