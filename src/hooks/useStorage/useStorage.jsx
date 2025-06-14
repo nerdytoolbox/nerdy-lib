@@ -15,7 +15,7 @@ export const useStorage = (localStorageKey, defaultData = {}, migrations) => {
 			const loadData = JSON.parse(localStorage.getItem(localStorageKey) || JSON.stringify(defaultData));
 
 			// Apply migrations if provided
-			if (migrations && version !== loadData.version) {
+			if (migrations && version !== loadData?.version) {
 				const migratedData = await migrateData(loadData, migrations)
 				setData(migratedData)
 			} else {
