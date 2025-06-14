@@ -15,7 +15,7 @@ export const useStorage = (localStorageKey, defaultData = {}, migrations) => {
 			const loadData = JSON.parse(localStorage.getItem(localStorageKey) || JSON.stringify(defaultData));
 
 			// Apply migrations if provided
-			if (migrations && version !== loadData?.version) {
+			if (!("version" in loadData) || version > loadData.version) {
 				const migratedData = await migrateData(loadData, migrations)
 				setData(migratedData)
 			} else {
@@ -28,6 +28,7 @@ export const useStorage = (localStorageKey, defaultData = {}, migrations) => {
 
 	// Sync to localStorage whenever data changes
 	useEffect(() => {
+		if (data === null) return; // Avoid saving null data
 		localStorage.setItem(localStorageKey, JSON.stringify(data));
 	}, [localStorageKey, data]);
 

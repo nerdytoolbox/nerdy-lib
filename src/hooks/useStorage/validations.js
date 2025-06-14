@@ -91,7 +91,6 @@ export const validateMigrations = (migrations) => {
 }
 
 export const validateUpdateBatch = (updateBatch) => {
-	debugger
 	if (!Array.isArray(updateBatch)) {
 		throw new Error("updateBatch must be an array");
 	}

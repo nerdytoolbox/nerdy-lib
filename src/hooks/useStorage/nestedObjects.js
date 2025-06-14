@@ -95,7 +95,6 @@ export const removeNestedValue = (obj, path) => {
 	if (current === null || typeof current !== 'object' || !(lastKey in current)) {
 		throw new Error(`Cannot remove value at path "${path}": "${lastKey}" does not exist.`);
 	}
-	debugger
 
 	delete current[lastKey];
 	return obj;
