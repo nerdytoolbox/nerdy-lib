@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { migrateData } from "./migrations";
-import { validateMigrations } from "./validateMigrations";
-import { copyNestedObject, setNestedValue, updateNestedValue } from "./nestedObjects";
+import { validateMigrations, validateUpdateBatch } from "./validations";
+import { copyNestedObject, setNestedValue } from "./nestedObjects";
 
-export const useStorage = (localStorageKey, defaultData = {}, version, migrations) => {
+export const useStorage = (localStorageKey, defaultData = {}, migrations) => {
 	const [data, setData] = useState(null);
 
 	// Load initial data
 	useEffect(() => {
 		validateMigrations(migrations)
+		const version = migrations.length > 0 ? migrations[migrations.length - 1].toVersion : 1;
 
 		const fetchData = async () => {
 			const loadData = JSON.parse(localStorage.getItem(localStorageKey) || JSON.stringify(defaultData));
@@ -31,13 +32,19 @@ export const useStorage = (localStorageKey, defaultData = {}, version, migration
 	}, [localStorageKey, data]);
 
 	/*
-	* Function to update a specific path in the data object
+	* Functions to update specific paths in the data object.
 	*
-	* path: string - The path to the property to update, e.g., 'user.name'
-	* value: any - The new value to set at the specified path
+	* updateBatch: An object containing the paths and values to update.
 	*/
-	const update = (path, value) => {
-		setData(setNestedValue(copyNestedObject(data), path, value));
+	const update = (updateBatch) => {
+		validateUpdateBatch(updateBatch)
+
+		let newData = copyNestedObject(data);
+		for (const update of updateBatch) {
+			newData = setNestedValue(newData, update.path, update.value)
+		}
+
+		setData(newData)
 	}
 
 	return { data, update };

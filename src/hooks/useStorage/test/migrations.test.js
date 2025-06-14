@@ -1,5 +1,5 @@
 import { migrateData, migrationsObjectExample, MigrationType } from "../migrations";
-import { validateMigrations } from "../validateMigrations";
+import { validateMigrations, validations } from "../validations";
 
 test('validate migrations', async () => {
 	await expect(async () => validateMigrations(migrationsObjectExample)).not.toThrow();

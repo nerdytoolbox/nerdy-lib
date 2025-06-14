@@ -49,7 +49,8 @@ export const getNestedValue = (obj, path) => {
 */
 export const setNestedValue = (obj, path, value) => {
 	if (path === "") {
-		return value
+		obj = value
+		return obj
 	}
 
 	basicChecks(obj, path);
