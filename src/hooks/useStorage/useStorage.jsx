@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { migrateData } from "./migrations";
 import { validateMigrations } from "./validateMigrations";
-import { copyNestedObject, updateNestedValue } from "./nestedObjects";
+import { copyNestedObject, setNestedValue, updateNestedValue } from "./nestedObjects";
 
 export const useStorage = (localStorageKey, defaultData = {}, version, migrations) => {
 	const [data, setData] = useState(null);
@@ -37,7 +37,7 @@ export const useStorage = (localStorageKey, defaultData = {}, version, migration
 	* value: any - The new value to set at the specified path
 	*/
 	const update = (path, value) => {
-		setData(updateNestedValue(copyNestedObject(data), path, value));
+		setData(setNestedValue(copyNestedObject(data), path, value));
 	}
 
 	return { data, update };

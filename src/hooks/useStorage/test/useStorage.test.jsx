@@ -16,4 +16,9 @@ test('test useStorage hook', async () => {
 		result.current.update('key2.key3', "now it's a string");
 	})
 	await waitFor(() => expect(result.current.data.key2.key3).toBe("now it's a string"));
+
+	act(() => {
+		result.current.update('', { newKey: "newValue" });
+	})
+	await waitFor(() => expect(result.current.data).toStrictEqual({ newKey: "newValue" }));
 });

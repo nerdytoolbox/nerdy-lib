@@ -44,9 +44,14 @@ export const getNestedValue = (obj, path) => {
 *
 * obj: The object to modify.
 * path: A string representing the path to the nested property, e.g., "key1.key2.key3".
+*   If the path is empty, it will replace the entire object.
 * value: The value to set at the specified path.
 */
 export const setNestedValue = (obj, path, value) => {
+	if (path === "") {
+		return value
+	}
+
 	basicChecks(obj, path);
 
 	const keys = path.split('.');
@@ -57,36 +62,6 @@ export const setNestedValue = (obj, path, value) => {
 		if (current[key] === undefined || current[key] === null) {
 			current[key] = {};
 		} else if (typeof current[key] !== 'object') {
-			throw new Error(`Cannot set value at path "${path}": "${key}" is not an object.`);
-		}
-		current = current[key];
-	}
-
-	current[lastKey] = value;
-	return obj;
-}
-
-/*
-* This function updates a value at a nested path in an object.
-* It will not create new objects in the path if it does not exist.
-*
-* obj: The object to modify.
-* path: A string representing the path to the nested property, e.g., "key1.key2.key3".
-* value: The value to update at the specified path. Must be a string, number, boolean or null.
-*/
-export const updateNestedValue = (obj, path, value) => {
-	basicChecks(obj, path);
-
-	if (typeof value !== 'string' && typeof value !== 'number' && typeof value !== 'boolean' && value !== null) {
-		throw new Error(`Value must be a string, number, boolean or null. Received: ${typeof value}`);
-	}
-
-	const keys = path.split('.');
-	const lastKey = keys.pop();
-	let current = obj;
-
-	for (const key of keys) {
-		if (current[key] === undefined || current[key] === null || typeof current[key] !== 'object') {
 			throw new Error(`Cannot set value at path "${path}": "${key}" is not an object.`);
 		}
 		current = current[key];
