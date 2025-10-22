@@ -1,0 +1,39 @@
+@use 'nerdy-lib/src/mixins' as mixins;
+
+.cookie-modal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+
+  width: 20rem;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: var(--white);
+  color: black;
+  font-size: 0.8rem;
+
+  &.hide {
+	display: none;
+  }
+
+  @include mixins.mobile {
+	width: 80%;
+  }
+
+  .buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 1rem;
+	width: 60%;
+  }
+}
