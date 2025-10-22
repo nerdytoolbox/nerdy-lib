@@ -12,6 +12,7 @@ export { CookieModal } from './components/CookieModal/CookieModal'
 
 // Export hooks
 export { useStorage } from './hooks/useStorage/useStorage'
+export { useAnalyticsConsent } from './hooks/useAnalyticsConsent/useAnalyticsConsent'
 
 // Export utilities
 export { MigrationType } from './hooks/useStorage/migrations'

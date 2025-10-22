@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import './CookieModal.scss'
+import { COOKIE_KEY } from '../../util/constants'
 import { Button } from "../Button/Button";
-
-const COOKIE_KEY = "cookie-settings"
+import './CookieModal.scss'
 
 export const CookieModal = () => {
 	const [cookieSetting, setCookieSettings] = useState(localStorage.getItem(COOKIE_KEY) ? JSON.parse(localStorage.getItem(COOKIE_KEY)) : null)
