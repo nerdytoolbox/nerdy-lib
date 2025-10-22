@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import './CookieModal.scss'
 import { Button } from "../Button/Button";
