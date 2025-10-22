@@ -8,7 +8,10 @@ export const useAnalyticsConsent = () => {
 	useEffect(() => {
 		const cookie_preference = JSON.parse(localStorage.getItem(COOKIE_KEY));
 
-		if (cookie_preference === true) {
+		if (window.location.hostname !== "localhost" &&
+			window.location.hostname !== "127.0.0.1" &&
+			cookie_preference === true
+		) {
 			const script = document.createElement("script");
 			script.async = true;
 			script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;

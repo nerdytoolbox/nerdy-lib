@@ -151,7 +151,7 @@ function pe() {
         "Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."
       )), e = this.props.ref, e !== void 0 ? e : null;
     }
-    function D(e, s, l, u, h, d, F, w) {
+    function D(e, s, l, u, h, d, w, F) {
       return l = d.ref, e = {
         $$typeof: U,
         type: e,
@@ -175,15 +175,15 @@ function pe() {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: F
+        value: w
       }), Object.defineProperty(e, "_debugTask", {
         configurable: !1,
         enumerable: !1,
         writable: !0,
-        value: w
+        value: F
       }), Object.freeze && (Object.freeze(e.props), Object.freeze(e)), e;
     }
-    function I(e, s, l, u, h, d, F, w) {
+    function I(e, s, l, u, h, d, w, F) {
       var f = s.children;
       if (f !== void 0)
         if (u)
@@ -229,8 +229,8 @@ React keys must be passed directly to JSX without using spread:
         h,
         i(),
         l,
-        F,
-        w
+        w,
+        F
       );
     }
     function z(e) {
@@ -513,7 +513,8 @@ const he = async (t, o) => {
   } };
 }, L = "G-EE5K3Z6K17", Ye = () => {
   Y(() => {
-    if (JSON.parse(localStorage.getItem(v)) === !0) {
+    const t = JSON.parse(localStorage.getItem(v));
+    if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1" && t === !0) {
       let n = function() {
         window.dataLayer.push(arguments);
       };
