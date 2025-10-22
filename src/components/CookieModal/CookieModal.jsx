@@ -1,7 +1,7 @@
-import { Button } from "nerdy-lib"
 import { useEffect, useState } from "react";
 
 import './CookieModal.scss'
+import { Button } from "../Button/Button";
 
 const COOKIE_KEY = "cookie-settings"
 
